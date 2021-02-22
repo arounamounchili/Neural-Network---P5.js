@@ -10,5 +10,15 @@ class Perceptron {
 
     guess(inputs) {
         let sum = 0;
+        let output;
+        for (let i = 0; i < this.weights.length; i++) { 
+            sum += inputs[i] * this.weights[i];
+        }
+        output = THIS.activationFunction(sum);
+        return output;
+    }
+
+    activationFunction(n) {
+        return n >= 0 ? 1 : -1;
     }
 }
