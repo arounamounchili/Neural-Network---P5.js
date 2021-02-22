@@ -1,7 +1,7 @@
 class Perceptron {
 
     constructor() {
-        this.weights = [];
+        this.weights = new Array(2);
 
         for (let i = 0; i < this.weights.length; i++) {
             this.weights[i] = Math.random(-1, 1);
@@ -14,11 +14,11 @@ class Perceptron {
         for (let i = 0; i < this.weights.length; i++) { 
             sum += inputs[i] * this.weights[i];
         }
-        output = THIS.activationFunction(sum);
+        output = this.activationFunction(sum);
         return output;
     }
 
     activationFunction(n) {
-        return n >= 0 ? 1 : -1;
+        return (n >= 0) ? 1 : -1;
     }
 }
