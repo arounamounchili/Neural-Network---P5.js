@@ -1,14 +1,17 @@
 class Point {
-    constructor() {
-        this.x = Math.random(width);
-        this.y = Math.random(heigth);
-        
-        this.label = (x > y) ? 1 : -1; 
+    constructor(w, h) {
+        this.x = Math.floor( Math.random() * w);
+        this.y = Math.floor(Math.random() * h);
+        this.label = (this.x > this.y) ? 1 : -1; 
     }
 
     show() {
         stroke(0);
-        (this.label === 0) ? fill(255) : fill(0);
-        ellipse(x, y, 8, 8);
+        if (this.label === 1) {
+             fill(255)
+         } else{ 
+            fill(0) 
+        };
+        ellipse(this.x, this.y, 10, 10);
     }
 }
